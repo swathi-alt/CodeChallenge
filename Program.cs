@@ -4,32 +4,55 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TriangleProject
+
+
+
+namespace QAChallenge
+
 {
-    class Program
+
+
+
+
+
+    class codechallenge3
+
     {
-        // int a = 7, b = 14, c = 16;
-        public static void checktraingle(int a, int b, int c)
+
+        static Random rnd = new Random();
+
+        static void Main(string[] args)
+
         {
 
+            var responses = new List<string>() { "Thi2s ", "is4 ", "a2 ", "book3 " };
 
+            var shuffle = new List<string>();
 
-            if (a + b > c && a + c > b && b + c > a)
+            for (int ix = responses.Count; ix > 0; --ix)
+
             {
-                Console.WriteLine("The sides given forms a Traingle");
+
+                int index = rnd.Next(0, ix);
+
+                shuffle.Add(responses[index]);
+
+                responses.RemoveAt(index);
+
             }
 
-            else
-                Console.WriteLine("The sides given does not form a Traingle");
+            foreach (string word in shuffle)
+
+                Console.Write(word);
+
+            Console.ReadLine();
 
         }
 
-
-
-        public static void Main(string[] args)
-        {
-
-            Program.checktraingle(7, 14, 16);
-        }
     }
+
+
+
 }
+
+
